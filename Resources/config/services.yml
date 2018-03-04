@@ -1,0 +1,11 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    c975L\ShareButtonsBundle\Service\:
+        resource: '../../Service/*'
+
+    c975L\ShareButtonsBundle\Twig\:
+        resource: '../../Twig/*'

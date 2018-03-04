@@ -1,0 +1,37 @@
+{
+    "name": "c975l/sharebuttons-bundle",
+    "type": "symfony-bundle",
+    "description": "Provides share buttons in differents views, with possibility to provide url",
+    "keywords": ["symfony", "bundle", "share", "buttons"],
+    "homepage": "https://github.com/975L/ShareButtonsBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Laurent Marquet",
+            "email": "laurent.marquet@laposte.net",
+            "homepage": "https://github.com/Laurent3170",
+            "role": "Developer"
+        },
+        {
+            "name": "975L Community",
+            "homepage": "https://github.com/975L"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "symfony/framework-bundle": "^3",
+        "sensio/framework-extra-bundle": "^3",
+        "symfony/assetic-bundle": "^2",
+        "c975l/includelibrary-bundle": "^1"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": { "c975L\\ShareButtonsBundle\\": ""
+        }
+    },
+    "support": {
+        "email": "contact@975l.com",
+        "source": "https://github.com/975L/ShareButtonsBundle",
+        "issues": "https://github.com/975L/ShareButtonsBundle/issues"
+    }
+}
