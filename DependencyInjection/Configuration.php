@@ -16,13 +16,7 @@ class Configuration implements ConfigurationInterface
 {
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('c975_l_share_buttons');
-
-        $rootNode
-            ->children()
-            ->end()
-        ;
+        $treeBuilder = new TreeBuilder('c975_l_share_buttons');
 
         return $treeBuilder;
     }

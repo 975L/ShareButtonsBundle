@@ -7,6 +7,8 @@ ShareButtonsBundle does the following:
 
 [ShareButtonsBundle dedicated web page](https://975l.com/en/pages/sharebuttons-bundle).
 
+[ShareButtonsBundle API documentation](https://975l.com/apidoc/c975L/ShareButtonsBundle.html).
+
 Bundle installation
 ===================
 
@@ -17,20 +19,3 @@ Use [Composer](https://getcomposer.org) to install the library
     composer require c975L/sharebuttons-bundle
 ```
 
-Step 2: Enable the Bundle
--------------------------
-Then, enable the bundles by adding them to the list of registered bundles in the `app/AppKernel.php` file of your project:
-
-```php
-<?php
-class AppKernel extends Kernel
-{
-    public function registerBundles()
-    {
-        $bundles = [
-            // ...
-            new c975L\ShareButtonsBundle\c975LShareButtonsBundle(),
-        ];
-    }
-}
-```
