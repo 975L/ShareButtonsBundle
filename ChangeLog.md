@@ -1,5 +1,10 @@
 # Changelog
 
+v1.2.1
+------
+- Added ellipse style (07/08/2019)
+- Fixed the not same size for buttons (07/08/2019)
+
 v1.2
 ----
 - Added core bundles files (06/08/2019)

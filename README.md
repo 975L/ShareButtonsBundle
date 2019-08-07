@@ -71,7 +71,7 @@ ShareButtonsBundle use [Fontawesome](https://fontawesome.com) for icons so **you
 
 ShareButtonsBundle is quite easy to use. You simply have to add the following code in your Twig templates, that uses the provided Twig Extension:
 ```twig
-{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)') }}
+{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)') }}
 
 ```
 

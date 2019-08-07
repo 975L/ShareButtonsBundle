@@ -11,6 +11,11 @@
     margin: 0.2em;
 }
 
+.btn-ellipse .btn-share {
+    margin: 0.3em;
+    border-radius: 50%;
+}
+
 .btn-facebook {
     background-color: #3c5a99;
 }
