@@ -1,5 +1,9 @@
 # Changelog
 
+v1.2
+----
+- Added core bundles files (06/08/2019)
+
 v1.1
 ----
 - Modified composer.json and DependencyInjection (05/08/2019)

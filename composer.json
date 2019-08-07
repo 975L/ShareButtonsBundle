@@ -21,9 +21,7 @@
         "php": "^7",
         "c975l/config-bundle": "^2",
         "c975l/email-bundle": "^3",
-        "c975l/includelibrary-bundle": "^1",
-        "c975l/services-bundle": "^1",
-        "c975l/toolbar-bundle": "^1"
+        "c975l/services-bundle": "^1"
     },
     "require-dev": {
         "phpstan/phpstan": "^0",
