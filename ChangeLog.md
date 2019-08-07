@@ -1,5 +1,9 @@
 # Changelog
 
+v1.2.3
+------
+- Replaced __DIR__ with a clearer path (07/08/2019)
+
 v1.2.2
 ------
 - Corrected path for saving SQL queries (07/08/2019)
