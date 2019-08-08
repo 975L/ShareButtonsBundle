@@ -71,10 +71,37 @@ ShareButtonsBundle use [Fontawesome](https://fontawesome.com) for icons so **you
 
 ShareButtonsBundle is quite easy to use. You simply have to add the following code in your Twig templates, that uses the provided Twig Extension:
 ```twig
-{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)') }}
+{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
+
+{# If you only need "main" shares you can also use the 'main' keyword as in the following #}
+{{ sharebuttons('main', 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
+
+{# The simpliest use is the following #}
+{{ sharebuttons('main', 'STYLE[distinct|ellipse|toolbar](default distinct)') }}
 
 ```
 
 Use the Route `sharebuttons_dashboard` (url: "/sharebuttons/dashboard") to access Dashboard.
+
+Available networks
+==================
+You can use any the following name, in the Twig Extension explained above, for its corresponding network:
+
+- facebook
+- twitter
+- linkedin
+- pinterest
+- email
+- blogger
+- buffer
+- delicious
+- evernote
+- pocket
+- reddit
+- skype
+- stumbleupon
+- tumblr
+- whatsapp
+- wordpress
 
 **If this project help you to reduce time to develop, you can [buy me a coffee](https://www.buymeacoffee.com/LaurentMarquet) :)**

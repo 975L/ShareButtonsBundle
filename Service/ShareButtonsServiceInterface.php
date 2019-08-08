@@ -20,7 +20,6 @@ interface ShareButtonsServiceInterface
 {
     /**
      * Adds a share to the database
-     * @return array
      */
     public function addShare(string $share, string $url);
 
@@ -32,7 +31,19 @@ interface ShareButtonsServiceInterface
 
     /**
      * Defines the url to redirect for sharing for a defined share
-     * @return array
+     * @return string|null
      */
     public function defineShareUrl(string $share, string $url);
+
+    /**
+     * Returns main share networks
+     * @return array
+     */
+    public function getMainShares();
+
+    /**
+     * Returns data related to share
+     * @return string|null
+     */
+    public function getShareData(string $kind, string $share);
 }

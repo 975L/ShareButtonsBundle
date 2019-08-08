@@ -51,20 +51,27 @@ class ShareButtons extends AbstractExtension
      * Returns the xhtml code for the button
      * @return string
      */
-    public function sharebuttons(Environment $environment, $shares, $style = 'distinct', $size = 'md', $alignment='center')
+    public function sharebuttons(Environment $environment, $shares, $style = 'distinct', $size = 'md', $alignment = 'center', $displayIcon = true, $displayText = false)
     {
-        $style = null === $style || '' === $style ? 'distinct' : $style;
+        //Defines main shares
+        $shares = 'main' === $shares ? $this->sharebuttonsService->getMainShares() : $shares;
 
-        //Defines shares
+        $style = '' === $style ? 'distinct' : $style;
+
+        //Defines shares to display
         $sharing = null;
         foreach ($shares as $share) {
-            //Defines $icon
-            $icon = $this->sharebuttonsService->defineButton($share);
+            //Defines $icon and $color
+            extract($this->sharebuttonsService->defineButton($share));
+
             if (null !== $icon) {
                 $sharing .= $environment->render('@c975LShareButtons/button.html.twig', array(
                     'share' => $share,
                     'size' => $size,
                     'icon' => $icon,
+                    'color' => $color,
+                    'displayIcon' => $displayIcon,
+                    'displayText' => $displayText,
                 ));
             }
         }

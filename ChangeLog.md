@@ -1,5 +1,18 @@
 # Changelog
 
+v1.3
+----
+- Added several networks (mentionned in README.md) (07/08/2019)
+- Grouped share data in one method to ease maintenance (08/08/2019)
+- Corrected returns types in ShareButtonsInterface (08/08/2019)
+- Added possibility to call Twig extension with 'main' that provides main networks (08/08/2019)
+- Moved color by share to ShareButtonsService (08/08/2019)
+- Added posibility to display the label in the button (08/08/2019)
+
+v1.2.3.1
+--------
+- Corrected wrong types (07/08/2019)
+
 v1.2.3
 ------
 - Replaced __DIR__ with a clearer path (07/08/2019)

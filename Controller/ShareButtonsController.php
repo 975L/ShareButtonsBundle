@@ -10,7 +10,6 @@
 namespace c975L\ShareButtonsBundle\Controller;
 
 use c975L\ConfigBundle\Service\ConfigServiceInterface;
-use c975L\ShareButtonsBundle\Entity\ShareButtons;
 use c975L\ShareButtonsBundle\Service\ShareButtonsServiceInterface;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -59,7 +58,7 @@ class ShareButtonsController extends AbstractController
 //SHARE
     /**
      * Creates the ShareButtons from url call (mainly from link sent in email built with Monolog)
-     * @return Response|Redirect
+     * @return Response
      *
      * @Route("/share/{share}/{url}",
      *    name="sharebuttons_share",

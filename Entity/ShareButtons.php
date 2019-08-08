@@ -11,7 +11,6 @@ namespace c975L\ShareButtonsBundle\Entity;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Entity ShareButtons (linked to DB table `exception_checker`)
@@ -51,7 +50,7 @@ class ShareButtons
 
     /**
      * Date of sharing
-     * @var date|null
+     * @var DateTime|null
      *
      * @ORM\Column(name="date", type="date", nullable=true)
      */
@@ -59,7 +58,7 @@ class ShareButtons
 
     /**
      * Time of sharing
-     * @var time|null
+     * @var DateTime|null
      *
      * @ORM\Column(name="time", type="date", nullable=true)
      */
@@ -126,10 +125,10 @@ class ShareButtons
 
     /**
      * Set date
-     * @param Date|null
+     * @param DateTime|null
      * @return ShareButtons
      */
-    public function setDate(?Date $date = null)
+    public function setDate(?DateTime $date = null)
     {
         $this->date = $date;
 
@@ -138,9 +137,9 @@ class ShareButtons
 
     /**
      * Get date
-     * @return Date|null
+     * @return DateTime|null
      */
-    public function getDate(): ?Date
+    public function getDate(): ?DateTime
     {
         return $this->date;
     }
@@ -150,7 +149,7 @@ class ShareButtons
      * @param string|null
      * @return ShareButtons
      */
-    public function setTime(?Time $time = null)
+    public function setTime(?DateTime $time = null)
     {
         $this->time = $time;
 
@@ -159,9 +158,9 @@ class ShareButtons
 
     /**
      * Get time
-     * @return Time|null
+     * @return DateTime|null
      */
-    public function getTime(): ?Time
+    public function getTime(): ?DateTime
     {
         return $this->time;
     }
