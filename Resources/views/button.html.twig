@@ -1,5 +1,5 @@
 <style>.btn-{{ share }}{background-color:{{ color }}}</style>
-<a href="{{ path('sharebuttons_share', {'url': app.request.uri|url_encode, 'share': share}) }}" onclick="sharePopup(this.href); return false;" class="btn btn-{{ size }} btn-share btn-{{ share }}" title="{{ share|capitalize }}" role="button">
+<a href="{{ path('sharebuttons_share', {'url': app.request.uri|url_encode, 'share': share}) }}" onclick="sharePopup(this.href); return false;" class="btn btn-{{ size }} btn-share btn-{{ share }}" title="{{ share|capitalize }}" role="button" rel="nofollow">
     {% if displayIcon == true %}
         <span class="fa-fw {{ icon }}"></span>
     {% endif %}

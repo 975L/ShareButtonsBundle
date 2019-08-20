@@ -1,5 +1,9 @@
 # Changelog
 
+v1.3.1
+------
+- Added rel="nofollow" to button (20/08/2019)
+
 v1.3
 ----
 - Added several networks (mentionned in README.md) (07/08/2019)
