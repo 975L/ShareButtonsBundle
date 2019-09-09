@@ -16,11 +16,11 @@ use Twig\TwigFunction;
 use Twig\Loader\FilesystemLoader;
 
 /**
- * Twig extension to provide the xhtml code for requested button using: `sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false))`
+ * Twig extension to provide the xhtml code for requested dropdown button using: ``
  * @author Laurent Marquet <laurent.marquet@laposte.net>
  * @copyright 2019 975L <contact@975l.com>
  */
-class ShareButtons extends AbstractExtension
+class ShareButtonsDropdown extends AbstractExtension
 {
     /**
      * Stores the shareButtonsServiceInterface
@@ -37,8 +37,8 @@ class ShareButtons extends AbstractExtension
     {
         return array(
             new TwigFunction(
-                'sharebuttons',
-                array($this, 'sharebuttons'),
+                'sharebuttons_dropdown',
+                array($this, 'sharebuttonsDropdown'),
                 array(
                     'needs_environment' => true,
                     'is_safe' => array('html'),
@@ -48,14 +48,13 @@ class ShareButtons extends AbstractExtension
     }
 
     /**
-     * Returns the xhtml code for the button
+     * Returns the xhtml code for the dropdown button
      * @return string
      */
-    public function sharebuttons(Environment $environment, $shares, $style = 'distinct', $size = 'md', $alignment = 'center', $displayIcon = true, $displayText = false, $url = null)
+    public function sharebuttonsDropdown(Environment $environment, $shares, $url, $size = 'md', $displayIcon = true, $displayText = false)
     {
-        //Defines data
+        //Defines main shares
         $shares = 'main' === $shares ? $this->sharebuttonsService->getMainShares() : $shares;
-        $style = '' === $style ? 'distinct' : $style;
 
         //Defines shares to display
         $sharing = null;
@@ -64,7 +63,7 @@ class ShareButtons extends AbstractExtension
             extract($this->sharebuttonsService->defineButton($share));
 
             if (null !== $icon) {
-                $sharing .= $environment->render('@c975LShareButtons/button.html.twig', array(
+                $sharing .= $environment->render('@c975LShareButtons/buttonDropdown.html.twig', array(
                     'share' => $share,
                     'size' => $size,
                     'icon' => $icon,
@@ -77,13 +76,9 @@ class ShareButtons extends AbstractExtension
         }
 
         //Returns sharing buttons
-        $loader = new FilesystemLoader(__DIR__ . '/../Resources/views');
-        if (null !== $sharing && $loader->exists($style . '.html.twig')) {
-            return $environment->render('@c975LShareButtons/' . $style . '.html.twig', array(
-                'sharing' => $sharing,
-                'size' => $size,
-                'alignment' => $alignment,
-            ));
-        }
+        return $environment->render('@c975LShareButtons/dropdown.html.twig', array(
+            'sharing' => $sharing,
+            'size' => $size,
+        ));
     }
 }

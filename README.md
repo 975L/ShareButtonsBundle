@@ -71,15 +71,29 @@ ShareButtonsBundle use [Fontawesome](https://fontawesome.com) for icons so **you
 
 ShareButtonsBundle is quite easy to use. You simply have to add the following code in your Twig templates, that uses the provided Twig Extension:
 ```twig
-{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
+{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false), 'URL') }}
 
 {# If you only need "main" shares you can also use the 'main' keyword as in the following #}
-{{ sharebuttons('main', 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
+{{ sharebuttons('main', 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXT[true|false](default false), 'URL') }}
 
 {# The simpliest use is the following #}
 {{ sharebuttons('main', 'STYLE[distinct|ellipse|toolbar](default distinct)') }}
-
 ```
+
+You can also use a dropdown button with the provided Twig Extension:
+```twig
+{{ sharebuttons_dropdown(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'URL', 'SIZE[lg|md|sm|xs](default md)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
+
+{# If you only need "main" shares you can also use the 'main' keyword as in the following #}
+{{ sharebuttons_dropdown('main', 'URL', 'SIZE[lg|md|sm|xs](default md)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
+
+{# The simpliest use is the following #}
+{{ sharebuttons_dropdown('main', 'URL' }}
+```
+
+
+public function sharebuttonsDropdown(Environment $environment, $shares, $size = 'md', $url, $displayIcon = true, $displayText = false)
+
 
 Use the Route `sharebuttons_dashboard` (url: "/sharebuttons/dashboard") to access Dashboard.
 

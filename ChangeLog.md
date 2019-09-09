@@ -1,5 +1,10 @@
 # Changelog
 
+v1.4
+----
+- Added dropdown button (09/09/2019)
+- Added possibility to provide the url (09/09/2019)
+
 v1.3.1
 ------
 - Added rel="nofollow" to button (20/08/2019)
