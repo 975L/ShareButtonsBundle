@@ -1,5 +1,9 @@
 # Changelog
 
+v1.5
+----
+- Removed use of symplify/easy-coding-standard as abandonned (19/02/2020)
+
 v1.4
 ----
 - Added dropdown button (09/09/2019)
