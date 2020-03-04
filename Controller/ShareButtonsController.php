@@ -47,7 +47,7 @@ class ShareButtonsController extends AbstractController
      *    name="sharebuttons_dashboard",
      *    methods={"HEAD", "GET"})
      */
-    public function dashboard(Request $request, PaginatorInterface $paginator)
+    public function dashboard()
     {
         $this->denyAccessUnlessGranted('c975LShareButtons-dashboard', null);
 
@@ -64,12 +64,15 @@ class ShareButtonsController extends AbstractController
      *    name="sharebuttons_share",
      *    methods={"HEAD", "GET"})
      */
-    public function share(Request $request, ConfigServiceInterface $configService, $share, $url)
+    public function share($share, $url)
     {
-        $shareUrl = $this->shareButtonsService->defineShareUrl($share, $url);
-        if (null !== $shareUrl) {
+        $shareData = $this->shareButtonsService->getShareData($share);
+
+        if (false !== $shareData) {
+            $shareUrl = $shareData['url'] . $url;
+
             //Adds share to database
-            $this->shareButtonsService->addShare($share, $url);
+            $this->shareButtonsService->addShare($share, $shareUrl);
 
             //Redirects to share url
             return $this->redirect($shareUrl);
@@ -105,10 +108,12 @@ class ShareButtonsController extends AbstractController
         }
 
         //Renders the config form
-        return $this->render('@c975LConfig/forms/config.html.twig', array(
-            'form' => $form->createView(),
-            'toolbar' => '@c975LShareButtons',
-        ));
+        return $this->render(
+            '@c975LConfig/forms/config.html.twig',
+            array(
+                'form' => $form->createView(),
+                'toolbar' => '@c975LShareButtons',
+            ));
     }
 
 //HELP

@@ -59,15 +59,13 @@ class ShareButtonsDropdown extends AbstractExtension
         //Defines shares to display
         $sharing = null;
         foreach ($shares as $share) {
-            //Defines $icon and $color
-            extract($this->sharebuttonsService->defineButton($share));
-
-            if (null !== $icon) {
+            $shareData = $this->sharebuttonsService->getShareData($share);
+            if (false !== $shareData) {
                 $sharing .= $environment->render('@c975LShareButtons/buttonDropdown.html.twig', array(
                     'share' => $share,
                     'size' => $size,
-                    'icon' => $icon,
-                    'color' => $color,
+                    'icon' => $shareData['icon'],
+                    'color' => $shareData['color'],
                     'displayIcon' => $displayIcon,
                     'displayText' => $displayText,
                     'url' => $url,

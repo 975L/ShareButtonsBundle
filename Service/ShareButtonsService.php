@@ -50,22 +50,6 @@ class ShareButtonsService implements ShareButtonsServiceInterface
     /**
      * {@inheritdoc}
      */
-    public function defineButton(string $share)
-    {
-        return $this->getShareData('icon', $share);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function defineShareUrl(string $share, string $url)
-    {
-        return $this->getShareData('url', $share) . $url;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getMainShares()
     {
         return array(
@@ -80,100 +64,97 @@ class ShareButtonsService implements ShareButtonsServiceInterface
     /**
      * {@inheritdoc}
      */
-    public function getShareData(string $kind, string $share)
+    public function getShareData(string $share)
     {
-        switch ($share) {
+        $shares = array(
             //Main shares
-            case 'facebook':
-                $icon = 'fab fa-facebook-f';
-                $color = '#3c5a99';
-                $url = 'https://www.facebook.com/sharer/sharer.php?u=';
-                break;
-            case 'twitter':
-                $icon = 'fab fa-twitter';
-                $color = '#1da1f2';
-                $url = 'https://twitter.com/intent/tweet?url=';
-                break;
-            case 'linkedin':
-                $icon = 'fab fa-linkedin-in';
-                $color = '#0077b5';
-                $url = 'https://www.linkedin.com/shareArticle?url=';
-                break;
-            case 'pinterest':
-                $icon = 'fab fa-pinterest-p';
-                $color = '#bd081c';
-                $url = 'https://pinterest.com/pin/create/button/?url=';
-                break;
-            case 'email':
-                $icon = 'fas fa-envelope';
-                $color = '#2f4f4f';
-                $url = 'mailto:?body=';
-                break;
-
+            'facebook' => array(
+                'icon' => 'fab fa-facebook-f',
+                'color' => '#3c5a99',
+                'url' => 'https://www.facebook.com/sharer/sharer.php?u=',
+            ),
+            'twitter' => array(
+                'icon' => 'fab fa-twitter',
+                'color' => '#1da1f2',
+                'url' => 'https://twitter.com/intent/tweet?url=',
+            ),
+            'linkedin' => array(
+                'icon' => 'fab fa-linkedin-in',
+                'color' => '#0077b5',
+                'url' => 'https://www.linkedin.com/shareArticle?url=',
+            ),
+            'pinterest' => array(
+                'icon' => 'fab fa-pinterest-p',
+                'color' => '#bd081c',
+                'url' => 'https://pinterest.com/pin/create/button/?url=',
+            ),
+            'email' => array(
+                'icon' => 'fas fa-envelope',
+                'color' => '#2f4f4f',
+                'url' => 'mailto:?body=',
+            ),
             //Other shares
-            case 'blogger':
-                $icon = 'fab fa-blogger-b';
-                $color = '#f57d00';
-                $url = 'https://www.blogger.com/start?successUrl=/blog-this.g?t&passive=true&u=';
-                break;
-            case 'buffer':
-                $icon = 'fab fa-buffer';
-                $color = '#168eea';
-                $url = 'https://bufferapp.com/add?url=';
-                break;
-            case 'delicious':
-                $icon = 'fab fa-delicious';
-                $color = '#3399ff';
-                $url = 'https://delicious.com/save?v=5&noui&jump=close&url=';
-                break;
-            case 'evernote':
-                $icon = 'fab fa-evernote';
-                $color = '#2dbe60';
-                $url = 'https://www.evernote.com/clip.action?url=';
-                break;
-            case 'pocket':
-                $icon = 'fab fa-get-pocket';
-                $color = '#ef4056';
-                $url = 'https://getpocket.com/save?url=';
-                break;
-            case 'reddit':
-                $icon = 'fab fa-reddit-alien';
-                $color = '#ff4500';
-                $url = 'https://reddit.com/submit?url=';
-                break;
-            case 'skype':
-                $icon = 'fab fa-skype';
-                $color = '#00aff0';
-                $url = 'https://web.skype.com/share?url=';
-                break;
-            case 'stumbleupon':
-                $icon = 'fab fa-stumbleupon';
-                $color = '#eb4924';
-                $url = 'https://www.stumbleupon.com/submit?url=';
-                break;
-            case 'tumblr':
-                $icon = 'fab fa-tumblr';
-                $color = '#35465c';
-                $url = 'https://www.tumblr.com/share?u=';
-                break;
-            case 'whatsapp':
-                $icon = 'fab fa-whatsapp';
-                $color = '#25d366';
-                $url = 'https://web.whatsapp.com/send?text=';
-                break;
-            case 'wordpress':
-                $icon = 'fab fa-wordpress';
-                $color = '#21759b';
-                $url = 'https://wordpress.com/press-this.php?u=';
-                break;
+            'blogger' => array(
+                'icon' => 'fab fa-blogger-b',
+                'color' => '#f57d00',
+                'url' => 'https://www.blogger.com/start?successUrl=/blog-this.g?t&passive=true&u=',
+            ),
+            'buffer' => array(
+                'icon' => 'fab fa-buffer',
+                'color' => '#168eea',
+                'url' => 'https://bufferapp.com/add?url=',
+            ),
+            'delicious' => array(
+                'icon' => 'fab fa-delicious',
+                'color' => '#3399ff',
+                'url' => 'https://delicious.com/save?v=5&noui&jump=close&url=',
+            ),
+            'evernote' => array(
+                'icon' => 'fab fa-evernote',
+                'color' => '#2dbe60',
+                'url' => 'https://www.evernote.com/clip.action?url=',
+            ),
+            'pocket' => array(
+                'icon' => 'fab fa-get-pocket',
+                'color' => '#ef4056',
+                'url' => 'https://getpocket.com/save?url=',
+            ),
+            'reddit' => array(
+                'icon' => 'fab fa-reddit-alien',
+                'color' => '#ff4500',
+                'url' => 'https://reddit.com/submit?url=',
+            ),
+            'skype' => array(
+                'icon' => 'fab fa-skype',
+                'color' => '#00aff0',
+                'url' => 'https://web.skype.com/share?url=',
+            ),
+            'stumbleupon' => array(
+                'icon' => 'fab fa-stumbleupon',
+                'color' => '#eb4924',
+                'url' => 'https://www.stumbleupon.com/submit?url=',
+            ),
+            'tumblr' => array(
+                'icon' => 'fab fa-tumblr',
+                'color' => '#35465c',
+                'url' => 'https://www.tumblr.com/share?u=',
+            ),
+            'whatsapp' => array(
+                'icon' => 'fab fa-whatsapp',
+                'color' => '#25d366',
+                'url' => 'https://web.whatsapp.com/send?text=',
+            ),
+            'wordpress' => array(
+                'icon' => 'fab fa-wordpress',
+                'color' => '#21759b',
+                'url' => 'https://wordpress.com/press-this.php?u=',
+            ),
+        );
 
-            default:
-                $icon = null;
-                $color = null;
-                $url = null;
-                break;
+        if (isset($shares[$share])) {
+            return $shares[$share];
         }
 
-        return 'icon' === $kind ? compact('icon', 'color'): $url;
+        return false;
     }
 }

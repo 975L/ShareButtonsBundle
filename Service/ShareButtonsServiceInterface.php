@@ -24,18 +24,6 @@ interface ShareButtonsServiceInterface
     public function addShare(string $share, string $url);
 
     /**
-     * Defines the icon for a defined share
-     * @return array
-     */
-    public function defineButton(string $share);
-
-    /**
-     * Defines the url to redirect for sharing for a defined share
-     * @return string|null
-     */
-    public function defineShareUrl(string $share, string $url);
-
-    /**
      * Returns main share networks
      * @return array
      */
@@ -45,5 +33,5 @@ interface ShareButtonsServiceInterface
      * Returns data related to share
      * @return string|null
      */
-    public function getShareData(string $kind, string $share);
+    public function getShareData(string $share);
 }
