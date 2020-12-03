@@ -1,6 +1,5 @@
 # ShareButtonsBundle
 
-
 ShareButtonsBundle does the following:
 
 - Defines buttons to share web page on different tools.

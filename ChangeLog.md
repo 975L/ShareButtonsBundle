@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.5.2
+
+- Added filter_var to validate url (03/12/2020)
+
 ## v1.5.1
 
 - Cosmetic changes due to Codacy review (04/03/2020)
