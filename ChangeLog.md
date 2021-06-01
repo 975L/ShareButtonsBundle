@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.5.3
+
+- Added condition to not have the name of the share twice in the url to avoid ssharing problems (01/06/2021)
+
 ## v1.5.2
 
 - Added filter_var to validate url (03/12/2020)
