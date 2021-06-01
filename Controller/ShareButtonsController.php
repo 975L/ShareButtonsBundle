@@ -55,13 +55,14 @@ class ShareButtonsController extends AbstractController
         return $this->render('@c975LShareButtons/pages/dashboard.html.twig');
     }
 
-//SHARE
+    //SHARE
     /**
      * Creates the ShareButtons from url call (mainly from link sent in email built with Monolog)
      * @return Response
      *
      * @Route("/share/{share}/{url}",
      *    name="sharebuttons_share",
+     *    requirements={"url": "^.*$"},
      *    methods={"HEAD", "GET"})
      */
     public function share($share, $url)
