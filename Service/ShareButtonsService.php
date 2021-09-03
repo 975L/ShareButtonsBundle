@@ -39,7 +39,7 @@ class ShareButtonsService implements ShareButtonsServiceInterface
             $database = $this->configService->getParameter('c975LShareButtons.database');
             $table = $this->configService->getParameter('c975LShareButtons.table');
             if (is_string($database) && is_string($table) && filter_var($url, FILTER_VALIDATE_URL)) {
-                $sqlFile = $this->configService->getContainerParameter('kernel.root_dir') . '/../var/tmp/sqlFile.sql';
+                $sqlFile = $this->configService->getContainerParameter('kernel.project_dir') . '/../var/tmp/sqlFile.sql';
                 $current = new DateTime();
                 $queryString = "INSERT INTO " . $database . "." . $table . " SET share='" . $share . "', url='" . urldecode($url) . "', date='" . $current->format('Y-m-d') . "', time='" . $current->format('H:i:s') . "';";
                 file_put_contents($sqlFile, $queryString, FILE_APPEND | LOCK_EX);
