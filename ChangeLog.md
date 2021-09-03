@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.6
+
+- Removed versions constraints in composer (03/09/2021)
 
 ## v1.5.3.1
 
