@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.6.2
+
+- Corrected file path for sql file (08/10/2021)
+
 ## v1.6.1
 
 - Replaced `kernel.root_dir` by `kernel.project_dir` (03/09/2021)
