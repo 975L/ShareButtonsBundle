@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.6.3
+
+- Corrected required versions in composer.json (11/10/2021)
+
 ## v1.6.2
 
 - Corrected file path for sql file (08/10/2021)
