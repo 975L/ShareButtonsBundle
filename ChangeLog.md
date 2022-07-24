@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.7
+
+- Changed composer versions constraints (24/07/2022)
+
 ## v1.6.3
 
 - Corrected required versions in composer.json (11/10/2021)
