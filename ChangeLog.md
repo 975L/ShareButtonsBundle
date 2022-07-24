@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.7.1
+
+- Added return type for Voter (24/07/2022)
+
 ## v1.7
 
 - Changed composer versions constraints (24/07/2022)

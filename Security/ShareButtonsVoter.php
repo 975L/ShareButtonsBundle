@@ -75,7 +75,7 @@ class ShareButtonsVoter extends Voter
     /**
      * {@inheritdoc}
      */
-    protected function supports($attribute, $subject)
+    protected function supports($attribute, $subject): bool
     {
         if (null !== $subject) {
             return $subject instanceof ShareButtons && in_array($attribute, self::ATTRIBUTES);
@@ -87,7 +87,7 @@ class ShareButtonsVoter extends Voter
     /**
      * {@inheritdoc}
      */
-    protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
+    protected function voteOnAttribute($attribute, $subject, TokenInterface $token): bool
     {
         //Defines access rights
         switch ($attribute) {
