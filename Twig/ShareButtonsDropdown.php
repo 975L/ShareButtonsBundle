@@ -22,29 +22,22 @@ use Twig\Loader\FilesystemLoader;
  */
 class ShareButtonsDropdown extends AbstractExtension
 {
-    /**
-     * Stores the shareButtonsServiceInterface
-     * @var ShareButtonsServiceInterface
-     */
-    private $sharebuttonsService;
-
-    public function __construct(ShareButtonsServiceInterface $sharebuttonsService)
+    public function __construct(
+        /**
+         * Stores the shareButtonsServiceInterface
+         */
+        private readonly ShareButtonsServiceInterface $sharebuttonsService
+    )
     {
-        $this->sharebuttonsService = $sharebuttonsService;
     }
 
     public function getFunctions()
     {
-        return array(
-            new TwigFunction(
-                'sharebuttons_dropdown',
-                array($this, 'sharebuttonsDropdown'),
-                array(
-                    'needs_environment' => true,
-                    'is_safe' => array('html'),
-                )
-            ),
-        );
+        return [new TwigFunction(
+            'sharebuttons_dropdown',
+            $this->sharebuttonsDropdown(...),
+            ['needs_environment' => true, 'is_safe' => ['html']]
+        )];
     }
 
     /**
@@ -61,22 +54,11 @@ class ShareButtonsDropdown extends AbstractExtension
         foreach ($shares as $share) {
             $shareData = $this->sharebuttonsService->getShareData($share);
             if (false !== $shareData) {
-                $sharing .= $environment->render('@c975LShareButtons/buttonDropdown.html.twig', array(
-                    'share' => $share,
-                    'size' => $size,
-                    'icon' => $shareData['icon'],
-                    'color' => $shareData['color'],
-                    'displayIcon' => $displayIcon,
-                    'displayText' => $displayText,
-                    'url' => $url,
-                ));
+                $sharing .= $environment->render('@c975LShareButtons/buttonDropdown.html.twig', ['share' => $share, 'size' => $size, 'icon' => $shareData['icon'], 'color' => $shareData['color'], 'displayIcon' => $displayIcon, 'displayText' => $displayText, 'url' => $url]);
             }
         }
 
         //Returns sharing buttons
-        return $environment->render('@c975LShareButtons/dropdown.html.twig', array(
-            'sharing' => $sharing,
-            'size' => $size,
-        ));
+        return $environment->render('@c975LShareButtons/dropdown.html.twig', ['sharing' => $sharing, 'size' => $size]);
     }
 }

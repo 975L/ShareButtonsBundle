@@ -20,8 +20,6 @@ class ShareButtonsControllerTest extends WebTestCase
 	//Provides unsuccesful urls
 	public function succesfulUrls()
 	{
-        return array(
-			array('/share/facebook/eeeee'),
-		);
+        return [['/share/facebook/eeeee']];
 	}
 }

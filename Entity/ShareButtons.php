@@ -74,7 +74,6 @@ class ShareButtons
 
     /**
      * Get id
-     * @return int
      */
     public function getId(): int
     {
@@ -137,7 +136,6 @@ class ShareButtons
 
     /**
      * Get date
-     * @return DateTime|null
      */
     public function getDate(): ?DateTime
     {
@@ -158,7 +156,6 @@ class ShareButtons
 
     /**
      * Get time
-     * @return DateTime|null
      */
     public function getTime(): ?DateTime
     {

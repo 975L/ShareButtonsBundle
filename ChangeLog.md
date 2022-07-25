@@ -1,5 +1,9 @@
 # Changelog
 
+## v2.0
+
+- Changed compatibility to PHP 8 (25/07/2022)
+
 ## v1.7.1
 
 - Added return type for Voter (24/07/2022)

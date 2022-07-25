@@ -19,15 +19,13 @@ use DateTime;
  */
 class ShareButtonsService implements ShareButtonsServiceInterface
 {
-    /**
-     * Stores ConfigServiceInterface
-     * @var ConfigServiceInterface
-     */
-    private $configService;
-
-    public function __construct(ConfigServiceInterface $configService)
+    public function __construct(
+        /**
+         * Stores ConfigServiceInterface
+         */
+        private readonly ConfigServiceInterface $configService
+    )
     {
-        $this->configService = $configService;
     }
 
     /**
@@ -56,13 +54,7 @@ class ShareButtonsService implements ShareButtonsServiceInterface
      */
     public function getMainShares()
     {
-        return array(
-            'facebook',
-            'twitter',
-            'linkedin',
-            'pinterest',
-            'email',
-        );
+        return ['facebook', 'twitter', 'linkedin', 'pinterest', 'email'];
     }
 
     /**
@@ -70,90 +62,26 @@ class ShareButtonsService implements ShareButtonsServiceInterface
      */
     public function getShareData(string $share)
     {
-        $shares = array(
+        $shares = [
             //Main shares
-            'facebook' => array(
-                'icon' => 'fab fa-facebook-f',
-                'color' => '#3c5a99',
-                'url' => 'https://www.facebook.com/sharer/sharer.php?u=',
-            ),
-            'twitter' => array(
-                'icon' => 'fab fa-twitter',
-                'color' => '#1da1f2',
-                'url' => 'https://twitter.com/intent/tweet?url=',
-            ),
-            'linkedin' => array(
-                'icon' => 'fab fa-linkedin-in',
-                'color' => '#0077b5',
-                'url' => 'https://www.linkedin.com/shareArticle?url=',
-            ),
-            'pinterest' => array(
-                'icon' => 'fab fa-pinterest-p',
-                'color' => '#bd081c',
-                'url' => 'https://pinterest.com/pin/create/button/?url=',
-            ),
-            'email' => array(
-                'icon' => 'fas fa-envelope',
-                'color' => '#2f4f4f',
-                'url' => 'mailto:?body=',
-            ),
+            'facebook' => ['icon' => 'fab fa-facebook-f', 'color' => '#3c5a99', 'url' => 'https://www.facebook.com/sharer/sharer.php?u='],
+            'twitter' => ['icon' => 'fab fa-twitter', 'color' => '#1da1f2', 'url' => 'https://twitter.com/intent/tweet?url='],
+            'linkedin' => ['icon' => 'fab fa-linkedin-in', 'color' => '#0077b5', 'url' => 'https://www.linkedin.com/shareArticle?url='],
+            'pinterest' => ['icon' => 'fab fa-pinterest-p', 'color' => '#bd081c', 'url' => 'https://pinterest.com/pin/create/button/?url='],
+            'email' => ['icon' => 'fas fa-envelope', 'color' => '#2f4f4f', 'url' => 'mailto:?body='],
             //Other shares
-            'blogger' => array(
-                'icon' => 'fab fa-blogger-b',
-                'color' => '#f57d00',
-                'url' => 'https://www.blogger.com/start?successUrl=/blog-this.g?t&passive=true&u=',
-            ),
-            'buffer' => array(
-                'icon' => 'fab fa-buffer',
-                'color' => '#168eea',
-                'url' => 'https://bufferapp.com/add?url=',
-            ),
-            'delicious' => array(
-                'icon' => 'fab fa-delicious',
-                'color' => '#3399ff',
-                'url' => 'https://delicious.com/save?v=5&noui&jump=close&url=',
-            ),
-            'evernote' => array(
-                'icon' => 'fab fa-evernote',
-                'color' => '#2dbe60',
-                'url' => 'https://www.evernote.com/clip.action?url=',
-            ),
-            'pocket' => array(
-                'icon' => 'fab fa-get-pocket',
-                'color' => '#ef4056',
-                'url' => 'https://getpocket.com/save?url=',
-            ),
-            'reddit' => array(
-                'icon' => 'fab fa-reddit-alien',
-                'color' => '#ff4500',
-                'url' => 'https://reddit.com/submit?url=',
-            ),
-            'skype' => array(
-                'icon' => 'fab fa-skype',
-                'color' => '#00aff0',
-                'url' => 'https://web.skype.com/share?url=',
-            ),
-            'stumbleupon' => array(
-                'icon' => 'fab fa-stumbleupon',
-                'color' => '#eb4924',
-                'url' => 'https://www.stumbleupon.com/submit?url=',
-            ),
-            'tumblr' => array(
-                'icon' => 'fab fa-tumblr',
-                'color' => '#35465c',
-                'url' => 'https://www.tumblr.com/share?u=',
-            ),
-            'whatsapp' => array(
-                'icon' => 'fab fa-whatsapp',
-                'color' => '#25d366',
-                'url' => 'https://web.whatsapp.com/send?text=',
-            ),
-            'wordpress' => array(
-                'icon' => 'fab fa-wordpress',
-                'color' => '#21759b',
-                'url' => 'https://wordpress.com/press-this.php?u=',
-            ),
-        );
+            'blogger' => ['icon' => 'fab fa-blogger-b', 'color' => '#f57d00', 'url' => 'https://www.blogger.com/start?successUrl=/blog-this.g?t&passive=true&u='],
+            'buffer' => ['icon' => 'fab fa-buffer', 'color' => '#168eea', 'url' => 'https://bufferapp.com/add?url='],
+            'delicious' => ['icon' => 'fab fa-delicious', 'color' => '#3399ff', 'url' => 'https://delicious.com/save?v=5&noui&jump=close&url='],
+            'evernote' => ['icon' => 'fab fa-evernote', 'color' => '#2dbe60', 'url' => 'https://www.evernote.com/clip.action?url='],
+            'pocket' => ['icon' => 'fab fa-get-pocket', 'color' => '#ef4056', 'url' => 'https://getpocket.com/save?url='],
+            'reddit' => ['icon' => 'fab fa-reddit-alien', 'color' => '#ff4500', 'url' => 'https://reddit.com/submit?url='],
+            'skype' => ['icon' => 'fab fa-skype', 'color' => '#00aff0', 'url' => 'https://web.skype.com/share?url='],
+            'stumbleupon' => ['icon' => 'fab fa-stumbleupon', 'color' => '#eb4924', 'url' => 'https://www.stumbleupon.com/submit?url='],
+            'tumblr' => ['icon' => 'fab fa-tumblr', 'color' => '#35465c', 'url' => 'https://www.tumblr.com/share?u='],
+            'whatsapp' => ['icon' => 'fab fa-whatsapp', 'color' => '#25d366', 'url' => 'https://web.whatsapp.com/send?text='],
+            'wordpress' => ['icon' => 'fab fa-wordpress', 'color' => '#21759b', 'url' => 'https://wordpress.com/press-this.php?u='],
+        ];
 
         if (isset($shares[$share])) {
             return $shares[$share];

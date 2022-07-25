@@ -11,11 +11,9 @@ namespace c975L\ShareButtonsBundle\Controller;
 
 use c975L\ConfigBundle\Service\ConfigServiceInterface;
 use c975L\ShareButtonsBundle\Service\ShareButtonsServiceInterface;
-use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
@@ -26,15 +24,13 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
  */
 class ShareButtonsController extends AbstractController
 {
-    /**
-     * Stores ShareButtonsService
-     * @var ShareButtonsServiceInterface
-     */
-    private $shareButtonsService;
-
-    public function __construct(ShareButtonsServiceInterface $shareButtonsService)
+    public function __construct(
+        /**
+         * Stores ShareButtonsService
+         */
+        private readonly ShareButtonsServiceInterface $shareButtonsService
+    )
     {
-        $this->shareButtonsService = $shareButtonsService;
     }
 
 //DASHBOARD
@@ -113,10 +109,7 @@ class ShareButtonsController extends AbstractController
         //Renders the config form
         return $this->render(
             '@c975LConfig/forms/config.html.twig',
-            array(
-                'form' => $form->createView(),
-                'toolbar' => '@c975LShareButtons',
-            ));
+            ['form' => $form->createView(), 'toolbar' => '@c975LShareButtons']);
     }
 
 //HELP
