@@ -28,7 +28,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
-        "psr-4": { "c975L\\ShareButtonsBundle\\": ""
+        "psr-4": { "c975L\\ShareButtonsBundle\\": "src/"
         }
     },
     "support": {
