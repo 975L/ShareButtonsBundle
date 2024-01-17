@@ -60,7 +60,7 @@ class ShareButtons extends AbstractExtension
         }
 
         //Returns sharing buttons
-        $loader = new FilesystemLoader(__DIR__ . '/../Resources/views');
+        $loader = new FilesystemLoader(__DIR__ . '/../../templates');
         if (null !== $sharing && $loader->exists($style . '.html.twig')) {
             return $environment->render('@c975LShareButtons/' . $style . '.html.twig', ['sharing' => $sharing, 'size' => $size, 'alignment' => $alignment]);
         }

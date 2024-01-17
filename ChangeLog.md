@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.4
+
+- Corrected call for templates folder (17/01/2024)
+
 ## v3.0.3
 
 - Transformed routes to attributes (17/01/2024)
