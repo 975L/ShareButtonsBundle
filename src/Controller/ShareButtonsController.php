@@ -38,11 +38,12 @@ class ShareButtonsController extends AbstractController
      * Displays the dashboard
      * @return Response
      * @throws AccessDeniedException
-     *
-     * @Route("/share/dashboard",
-     *    name="sharebuttons_dashboard",
-     *    methods={"HEAD", "GET"})
      */
+    #[Route(
+        '/share/dashboard',
+        name: 'sharebuttons_dashboard',
+        methods: ['GET']
+    )]
     public function dashboard()
     {
         $this->denyAccessUnlessGranted('c975LShareButtons-dashboard', null);
@@ -55,12 +56,15 @@ class ShareButtonsController extends AbstractController
     /**
      * Creates the ShareButtons from url call (mainly from link sent in email built with Monolog)
      * @return Response
-     *
-     * @Route("/share/{share}/{url}",
-     *    name="sharebuttons_share",
-     *    requirements={"url": "^.*$"},
-     *    methods={"HEAD", "GET"})
      */
+    #[Route(
+        '/share/{share}/{url}',
+        name: 'sharebuttons_share',
+        requirements: [
+            'url' => '^.*$'
+        ],
+        methods: ['GET']
+    )]
     public function share($share, $url)
     {
         $shareData = $this->shareButtonsService->getShareData($share);
@@ -85,11 +89,12 @@ class ShareButtonsController extends AbstractController
      * Displays the configuration
      * @return Response
      * @throws AccessDeniedException
-     *
-     * @Route("/share/config",
-     *    name="sharebuttons_config",
-     *    methods={"HEAD", "GET", "POST"})
      */
+    #[Route(
+        '/share/config',
+        name: 'sharebuttons_config',
+        methods: ['GET', 'POST']
+    )]
     public function config(Request $request, ConfigServiceInterface $configService)
     {
         $this->denyAccessUnlessGranted('c975LShareButtons-config', null);
@@ -117,11 +122,12 @@ class ShareButtonsController extends AbstractController
      * Displays the help
      * @return Response
      * @throws AccessDeniedException
-     *
-     * @Route("/share/help",
-     *    name="sharebuttons_help",
-     *    methods={"HEAD", "GET"})
      */
+    #[Route(
+        '/share/help',
+        name: 'sharebuttons_help',
+        methods: ['GET']
+    )]
     public function help()
     {
         $this->denyAccessUnlessGranted('c975LShareButtons-help', null);
