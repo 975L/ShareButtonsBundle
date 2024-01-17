@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.0.2
+
+- Suppressed Tests folder (17/07/2024)
+
 ## v3.0.1
 
 - Moved Tests folder under src (17/07/2024)
