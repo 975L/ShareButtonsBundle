@@ -19,11 +19,6 @@ use c975L\ShareButtonsBundle\Entity\ShareButtons;
 interface ShareButtonsServiceInterface
 {
     /**
-     * Adds a share to the database
-     */
-    public function addShare(string $share, string $url);
-
-    /**
      * Returns main share networks
      * @return array
      */

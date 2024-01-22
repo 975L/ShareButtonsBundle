@@ -1,5 +1,11 @@
 # Changelog
 
+## v4.0
+
+- Removed the save in the database (22/01/2024)
+
+Upgrading from v3.x? **Check UPGRADE.md**
+
 ## v3.0.4
 
 - Corrected call for templates folder (17/01/2024)

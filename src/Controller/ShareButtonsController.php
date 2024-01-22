@@ -72,9 +72,6 @@ class ShareButtonsController extends AbstractController
         if (false !== $shareData) {
             $shareUrl = $shareData['url'] . $url;
 
-            //Adds share to database
-            $added = $this->shareButtonsService->addShare($share, $shareUrl);
-
             //Redirects to share url
             if ($added) {
                 return $this->redirect($shareUrl);

@@ -31,27 +31,6 @@ class ShareButtonsService implements ShareButtonsServiceInterface
     /**
      * {@inheritdoc}
      */
-    public function addShare(string $share, string $url)
-    {
-        if (1 === preg_match_all("/$share/i", $url) && $this->configService->getParameter('c975LShareButtons.statistics')) {
-            $database = $this->configService->getParameter('c975LShareButtons.database');
-            $table = $this->configService->getParameter('c975LShareButtons.table');
-            if (is_string($database) && is_string($table) && filter_var($url, FILTER_VALIDATE_URL)) {
-                $sqlFile = $this->configService->getContainerParameter('kernel.project_dir') . '/var/tmp/sqlFile.sql';
-                $current = new DateTime();
-                $queryString = "INSERT INTO " . $database . "." . $table . " SET share='" . $share . "', url='" . urldecode($url) . "', date='" . $current->format('Y-m-d') . "', time='" . $current->format('H:i:s') . "';";
-                file_put_contents($sqlFile, $queryString, FILE_APPEND | LOCK_EX);
-
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
     public function getMainShares()
     {
         return ['facebook', 'twitter', 'linkedin', 'pinterest', 'email'];

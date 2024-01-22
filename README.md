@@ -36,11 +36,7 @@ c975_l_share_buttons:
     #    _locale: en|fr|es
 ```
 
-### Step 3: Create MySql table
-
-You can use `php bin/console make:migration` to create the migration file as documented in [Symfony's Doctrine docs](https://symfony.com/doc/current/doctrine.html) OR use `/Resources/sql/sharebuttons.sql` to create the table `sharebuttons`. The `DROP TABLE` is commented to avoid dropping by mistake.
-
-### Step 4: Integration with your website
+### Step 3: Integration with your website
 
 It is strongly recommended to use the [Override Templates from Third-Party Bundles feature](http://symfony.com/doc/current/templating/overriding.html) to integrate fully with your site.
 
@@ -63,8 +59,6 @@ In `layout.html.twig`, it will mainly consist to extend your layout and define s
 ### Step 5: Define configuration
 
 You need to define the Role needed to access data and if you wish to save statistics of shares. You can do this by using `sharebuttons_config` Route or directly in your `/config/config_bundles.yaml`, in this case, do not forget to clear the cache after. Options are described in the file `/Resources/config/bundle.yaml`.
-
-To save time and avoid database access at each share, the statistics are saved, as SQL queries, in the file `/var/tmp/sqlFile.sql` (you need to create the folder). **You must import (and then delete) this sql file to your database on a regular basis, to enter them, in one shot, in the database. Or you can use the bash script `ImportSqlFile.sql` in [c975L/ServicesBundle](https://github.com/975L/ServicesBundle) to achieve it by simply adding a cron :)**
 
 ### How to use
 
