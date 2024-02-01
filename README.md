@@ -56,6 +56,20 @@ In `layout.html.twig`, it will mainly consist to extend your layout and define s
 {% endblock %}
 ```
 
+### Step 4: Made use of assets
+
+To use styles and javascript you have to include them from `public/css/` and `public/js/`:
+
+```twig
+<link rel="stylesheet" href="bundles/c975lsite/css/animations.min.css">
+<script src="bundles/c975lsharebuttons/js/functions.min.js"></script>
+
+{# or  using c975L/IncludeLibrary #}
+{{ inc_lib(absolute_url(asset('bundles/c975lsharebuttons/css/styles.min.css')), 'local') }}
+{{ inc_lib(absolute_url(asset('bundles/c975lsharebuttons/js/functions.min.js')), 'local') }}
+
+```
+
 ### Step 5: Define configuration
 
 You need to define the Role needed to access data and if you wish to save statistics of shares. You can do this by using `sharebuttons_config` Route or directly in your `/config/config_bundles.yaml`, in this case, do not forget to clear the cache after. Options are described in the file `/Resources/config/bundle.yaml`.

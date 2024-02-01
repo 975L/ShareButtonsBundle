@@ -54,7 +54,7 @@ class ShareButtonsDropdown extends AbstractExtension
         foreach ($shares as $share) {
             $shareData = $this->sharebuttonsService->getShareData($share);
             if (false !== $shareData) {
-                $sharing .= $environment->render('@c975LShareButtons/buttonDropdown.html.twig', ['share' => $share, 'size' => $size, 'icon' => $shareData['icon'], 'color' => $shareData['color'], 'displayIcon' => $displayIcon, 'displayText' => $displayText, 'url' => $url]);
+                $sharing .= $environment->render('@c975LShareButtons/buttonDropdown.html.twig', ['share' => $share, 'size' => $size, 'icon' => $shareData['icon'], 'displayIcon' => $displayIcon, 'displayText' => $displayText, 'url' => $url]);
             }
         }
 

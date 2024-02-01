@@ -67,15 +67,10 @@ class ShareButtonsController extends AbstractController
     )]
     public function share($share, $url)
     {
+        //Redirects to share url
         $shareData = $this->shareButtonsService->getShareData($share);
-
         if (false !== $shareData) {
-            $shareUrl = $shareData['url'] . $url;
-
-            //Redirects to share url
-            if ($added) {
-                return $this->redirect($shareUrl);
-            }
+            return $this->redirect($shareData['url'] . urldecode($url));
         }
 
         return new Response();

@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.1
+
+- Added double urlencode to avoid problems with Apache servers (01/02/2024)
+- Moved styles in css file to avoid W3C error (01/02/2024)
+- Moved assets to public folder (01/02/2024)
+- Finished removal of database recording (01/02/2024)
+
 ## v4.0
 
 - Removed the save in the database (22/01/2024)

@@ -4,18 +4,3 @@ c975LShareButtons:
         required: true
         default: ROLE_ADMIN
         info: "User's role needed to enable access to data linked to ShareButtonsBundle: i.e. ROLE_ADMIN (default)"
-    statistics:
-        type: bool
-        required: false
-        default: false
-        info: "If you wish to register the statistics of sharing (Default false)"
-    database:
-        type: string
-        required: false
-        default: null
-        info: "The name of the database used to store the statistics (Default null)"
-    table:
-        type: string
-        required: false
-        default: null
-        info: "The name of the table used to store the statistics (Default null)"
