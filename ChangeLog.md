@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.2
+
+- Removed icons under 768px as tablet/smartphone have their own sharing system (01/02/2024)
+
 ## v4.1
 
 - Added double urlencode to avoid problems with Apache servers (01/02/2024)
