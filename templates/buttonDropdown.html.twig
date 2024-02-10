@@ -1,8 +1,0 @@
-<a href="{{ path('sharebuttons_share', {'url': url|url_encode|url_encode, 'share': share}) }}" onclick="sharePopup(this.href); return false;" class="btn btn-{{ size }} btn-share btn-{{ share }} btn-margin0" title="{{ share|capitalize }}" role="button" rel="nofollow">
-	{% if displayIcon == true %}
-		<span class="fa-fw {{ icon }}"></span>
-	{% endif %}
-	{% if displayText == true %}
-		{{ share|capitalize}}
-	{% endif %}
-</a>

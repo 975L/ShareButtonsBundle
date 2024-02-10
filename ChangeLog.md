@@ -1,5 +1,12 @@
 # Changelog
 
+## v4.3
+
+- Removed 'size' part of buttons to not depend on Bootstrap (10/02/2024)
+- Included fontawesome icons to not have to load them (10/02/2024)
+- Removed dropdown style (10/02/2024)
+- Added circle and square styles (10/02/2024)
+
 ## v4.2
 
 - Removed icons under 768px as tablet/smartphone have their own sharing system (01/02/2024)

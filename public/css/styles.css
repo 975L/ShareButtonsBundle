@@ -1,34 +1,67 @@
+.btn-circle,
+.btn-distinct,
 .btn-ellipse,
-.btn-toolbar,
-.btn-distinct {
+.btn-square,
+.btn-toolbar {
     display: none;
 }
 
 @media (min-width: 768px) {
+    .share {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-circle,
+    .btn-distinct,
     .btn-ellipse,
-    .btn-toolbar,
-    .btn-distinct {
-        display: block;
-    }
-    .btn-share span {
-        color: #fff;
+    .btn-square,
+    .btn-toolbar {
+        display: flex;
     }
 
-    .btn-share:hover {
-        animation: bounceVertical 0.5s infinite ease-in-out;
+    a.btn-share {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 
+    a.btn-share img {
+        width: 24px;
+        height: 24px;
+        margin: 0 auto;
+        filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(262deg) brightness(102%) contrast(101%);
+    }
+
+    .btn-distinct a.btn-share,
+    .btn-ellipse a.btn-share {
+        width: 65px;
+        height: 50px;
+    }
+
+    .btn-circle a.btn-share,
+    .btn-square a.btn-share {
+        width: 50px;
+        height: 50px;
+    }
+
+    .btn-circle .btn-share,
+    .btn-ellipse .btn-share,
+    .btn-square .btn-share,
     .btn-distinct .btn-share {
         margin: 0.2em;
     }
 
+    .btn-circle .btn-share,
     .btn-ellipse .btn-share {
-        margin: 0.3em;
         border-radius: 50%;
     }
 
-    .btn-margin0 {
-        margin: 0 !important;
+    .btn-share:hover {
+        animation: bounceVertical 0.5s infinite ease-in-out;
     }
 
     /* Social networks colors */
@@ -75,11 +108,6 @@
     .btn-evernote,
     .btn-evernote:hover {
         background-color: #2dbe60;
-    }
-
-    .btn-pocket,
-    .btn-pocket:hover {
-        background-color: #ef4056;
     }
 
     .btn-reddit,

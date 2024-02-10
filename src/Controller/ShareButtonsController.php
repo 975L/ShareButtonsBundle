@@ -33,26 +33,7 @@ class ShareButtonsController extends AbstractController
     {
     }
 
-//DASHBOARD
-    /**
-     * Displays the dashboard
-     * @return Response
-     * @throws AccessDeniedException
-     */
-    #[Route(
-        '/share/dashboard',
-        name: 'sharebuttons_dashboard',
-        methods: ['GET']
-    )]
-    public function dashboard()
-    {
-        $this->denyAccessUnlessGranted('c975LShareButtons-dashboard', null);
-
-        //Renders the dashboard
-        return $this->render('@c975LShareButtons/pages/dashboard.html.twig');
-    }
-
-    //SHARE
+//SHARE
     /**
      * Creates the ShareButtons from url call (mainly from link sent in email built with Monolog)
      * @return Response
@@ -74,6 +55,25 @@ class ShareButtonsController extends AbstractController
         }
 
         return new Response();
+    }
+
+//DASHBOARD
+    /**
+     * Displays the dashboard
+     * @return Response
+     * @throws AccessDeniedException
+     */
+    #[Route(
+        '/share/dashboard',
+        name: 'sharebuttons_dashboard',
+        methods: ['GET']
+    )]
+    public function dashboard()
+    {
+        $this->denyAccessUnlessGranted('c975LShareButtons-dashboard', null);
+
+        //Renders the dashboard
+        return $this->render('@c975LShareButtons/pages/dashboard.html.twig');
     }
 
 //CONFIG

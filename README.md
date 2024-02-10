@@ -76,33 +76,19 @@ You need to define the Role needed to access data and if you wish to save statis
 
 ### How to use
 
-ShareButtonsBundle use [Fontawesome](https://fontawesome.com) for icons so **you have to load it from your web page**. You may use [c975L/IncludeLibraryBundle](https://github.com/975L/IncludeLibraryBundle) that will allow you to simply add `{{ inc_lib('fontawesome', 'css') }}` in your layout.html.twig, but if you use [c975L/SiteBundle](https://github.com/975L/SiteBundle) it's already there in `stylesheets` section :).
+ShareButtonsBundle use [Fontawesome](https://fontawesome.com) for icons, their svgs are included in the bundle to avoid having to link to fontawesome css/js.
 
 ShareButtonsBundle is quite easy to use. You simply have to add the following code in your Twig templates, that uses the provided Twig Extension:
 
 ```twig
-{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false), 'URL') }}
+{{ sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|circle|toolbar](default distinct)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false), 'URL') }}
 
 {# If you only need "main" shares you can also use the 'main' keyword as in the following #}
-{{ sharebuttons('main', 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXT[true|false](default false), 'URL') }}
+{{ sharebuttons('main', 'STYLE[distinct|ellipse|circle|toolbar](default distinct)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXT[true|false](default false), 'URL') }}
 
 {# The simpliest use is the following #}
-{{ sharebuttons('main', 'STYLE[distinct|ellipse|toolbar](default distinct)') }}
+{{ sharebuttons('main', 'STYLE[distinct|ellipse|circle|toolbar](default distinct)') }}
 ```
-
-You can also use a dropdown button with the provided Twig Extension:
-
-```twig
-{{ sharebuttons_dropdown(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'URL', 'SIZE[lg|md|sm|xs](default md)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
-
-{# If you only need "main" shares you can also use the 'main' keyword as in the following #}
-{{ sharebuttons_dropdown('main', 'URL', 'SIZE[lg|md|sm|xs](default md)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false)) }}
-
-{# The simpliest use is the following #}
-{{ sharebuttons_dropdown('main', 'URL' }}
-```
-
-public function sharebuttonsDropdown(Environment $environment, $shares, $size = 'md', $url, $displayIcon = true, $displayText = false)
 
 Use the Route `sharebuttons_dashboard` (url: "/sharebuttons/dashboard") to access Dashboard.
 
@@ -119,7 +105,6 @@ You can use any the following name, in the Twig Extension explained above, for i
 - buffer
 - delicious
 - evernote
-- pocket
 - reddit
 - skype
 - stumbleupon

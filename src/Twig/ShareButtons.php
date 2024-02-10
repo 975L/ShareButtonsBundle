@@ -16,7 +16,7 @@ use Twig\TwigFunction;
 use Twig\Loader\FilesystemLoader;
 
 /**
- * Twig extension to provide the xhtml code for requested button using: `sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|toolbar](default distinct)', 'SIZE[lg|md|sm|xs](default md)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false))`
+ * Twig extension to provide the xhtml code for requested button using: `sharebuttons(['SHARE1', 'SHARE2', 'SHARE3', etc.], 'STYLE[distinct|ellipse|circle|toolbar](default distinct)', 'ALIGNMENT[left|center|right](default center)', DISPLAY_ICON[true|false](default true), DISPLAY_TEXTX[true|false](default false))`
  * @author Laurent Marquet <laurent.marquet@laposte.net>
  * @copyright 2019 975L <contact@975l.com>
  */
@@ -44,7 +44,7 @@ class ShareButtons extends AbstractExtension
      * Returns the xhtml code for the button
      * @return string
      */
-    public function sharebuttons(Environment $environment, $shares, $style = 'distinct', $size = 'md', $alignment = 'center', $displayIcon = true, $displayText = false, $url = null)
+    public function sharebuttons(Environment $environment, $shares, $style = 'distinct', $alignment = 'center', $displayIcon = true, $displayText = false, $url = null)
     {
         //Defines data
         $shares = 'main' === $shares ? $this->sharebuttonsService->getMainShares() : $shares;
@@ -55,14 +55,14 @@ class ShareButtons extends AbstractExtension
         foreach ($shares as $share) {
             $shareData = $this->sharebuttonsService->getShareData($share);
             if (false !== $shareData) {
-                $sharing .= $environment->render('@c975LShareButtons/button.html.twig', ['share' => $share, 'size' => $size, 'icon' => $shareData['icon'], 'displayIcon' => $displayIcon, 'displayText' => $displayText, 'url' => $url]);
+                $sharing .= $environment->render('@c975LShareButtons/button.html.twig', ['share' => $share, 'displayIcon' => $displayIcon, 'displayText' => $displayText, 'url' => $url]);
             }
         }
 
         //Returns sharing buttons
         $loader = new FilesystemLoader(__DIR__ . '/../../templates');
-        if (null !== $sharing && $loader->exists($style . '.html.twig')) {
-            return $environment->render('@c975LShareButtons/' . $style . '.html.twig', ['sharing' => $sharing, 'size' => $size, 'alignment' => $alignment]);
+        if (null !== $sharing) {
+            return $environment->render('@c975LShareButtons/style.html.twig', ['sharing' => $sharing, 'alignment' => $alignment, 'style' => $style]);
         }
     }
 }
