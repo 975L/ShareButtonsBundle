@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.3.1
+
+- Added missing svgs (10/02/2024)
+
 ## v4.3
 
 - Removed 'size' part of buttons to not depend on Bootstrap (10/02/2024)
