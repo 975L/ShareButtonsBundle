@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.3.2
+
+- Modified styles (13/02/2024)
+
 ## v4.3.1
 
 - Added missing svgs (10/02/2024)
