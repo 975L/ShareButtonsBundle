@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.3.3
+
+- Added alt + title to icon's img (18/02/2024)
+
 ## v4.3.2
 
 - Modified styles (13/02/2024)
