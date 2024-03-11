@@ -14,3 +14,11 @@ function sharePopup(url) {
     let top = (screen.height - height) / 2;
     window.open(url, "Share", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + width + ", height=" + height + ", top=" + top + ", left=" + left);
 }
+
+// Puts event listeners on .btn-share
+document.querySelectorAll('.btn-share').forEach(item => {
+    item.addEventListener('click', event => {
+        event.preventDefault();
+        sharePopup(item.getAttribute('href'));
+    });
+});

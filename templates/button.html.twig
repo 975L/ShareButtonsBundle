@@ -2,7 +2,7 @@
 {% if url != null %}
 	{% set urlFinal = url %}
 {% endif %}
-<a href="{{ path('sharebuttons_share', {'url': urlFinal|url_encode|url_encode, 'share': share}) }}" onclick="sharePopup(this.href); return false;" class="btn btn-share btn-{{ share }}" role="button" rel="nofollow">
+<a href="{{ path('sharebuttons_share', {'url': urlFinal|url_encode|url_encode, 'share': share}) }}" class="btn btn-share btn-{{ share }}" role="button" rel="nofollow">
 	{% if displayIcon == true %}
 		<img src="{{ absolute_url(asset('bundles/c975lsharebuttons/images/' ~ share ~ '.svg')) }}" alt="{{ share|capitalize }}" title="{{ share|capitalize }}">
 	{% endif %}

@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.4
+
+- Removed the inline onclick to avoid having inline js (11/03/2024))
+
 ## v4.3.3
 
 - Added alt + title to icon's img (18/02/2024)
