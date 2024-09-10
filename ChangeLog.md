@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.4.1
+
+- Changed DependencyInjection Extension (10/09/2024)
+
 ## v4.4
 
 - Removed the inline onclick to avoid having inline js (11/03/2024))

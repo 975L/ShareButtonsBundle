@@ -10,7 +10,7 @@
 namespace c975L\ShareButtonsBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 
 class c975LShareButtonsExtension extends Extension
 {
