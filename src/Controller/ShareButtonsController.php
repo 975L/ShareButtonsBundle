@@ -73,7 +73,7 @@ class ShareButtonsController extends AbstractController
         $this->denyAccessUnlessGranted('c975LShareButtons-dashboard', null);
 
         //Renders the dashboard
-        return $this->render('@c975LShareButtons/pages/dashboard.html.twig');
+        return $this->render('@c975LShareButtons/pages/dashboard.html.twig')->setMaxAge(3600);
     }
 
 //CONFIG
@@ -106,7 +106,8 @@ class ShareButtonsController extends AbstractController
         //Renders the config form
         return $this->render(
             '@c975LConfig/forms/config.html.twig',
-            ['form' => $form->createView(), 'toolbar' => '@c975LShareButtons']);
+            ['form' => $form->createView(), 'toolbar' => '@c975LShareButtons']
+        )->setMaxAge(3600);
     }
 
 //HELP
@@ -125,6 +126,6 @@ class ShareButtonsController extends AbstractController
         $this->denyAccessUnlessGranted('c975LShareButtons-help', null);
 
         //Renders the help
-        return $this->render('@c975LShareButtons/pages/help.html.twig');
+        return $this->render('@c975LShareButtons/pages/help.html.twig')->setMaxAge(3600);
     }
 }

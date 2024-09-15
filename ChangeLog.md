@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.6
+
+- Added ->setMaxAge(3600) to controllers (15/09/2024)
+
 ## v4.5
 
 - Suppressed spaceless filter as it's deprecated (12/09/2024)
