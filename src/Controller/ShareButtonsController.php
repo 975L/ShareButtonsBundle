@@ -33,7 +33,29 @@ class ShareButtonsController extends AbstractController
     {
     }
 
-//SHARE
+// REDIRECT POST TO GET SHARE
+    /**
+     * Redirect calls made with post to get Route to avoid errors
+     * @return Response
+     */
+    #[Route(
+        '/share/{share}/{url}',
+        name: 'sharebuttons_share_redirect',
+        requirements: [
+            'url' => '^.*$'
+        ],
+        methods: ['POST']
+    )]
+    public function shareRedirect($share, $url)
+    {
+        //Redirects to share url
+        $this->redirectToroute('sharebuttons_share', [
+            'share' => $share,
+            'url' => $url
+        ]);
+    }
+
+// SHARE
     /**
      * Creates the ShareButtons from url call (mainly from link sent in email built with Monolog)
      * @return Response
@@ -57,7 +79,7 @@ class ShareButtonsController extends AbstractController
         return new Response();
     }
 
-//DASHBOARD
+// DASHBOARD
     /**
      * Displays the dashboard
      * @return Response
@@ -76,7 +98,7 @@ class ShareButtonsController extends AbstractController
         return $this->render('@c975LShareButtons/pages/dashboard.html.twig')->setMaxAge(3600);
     }
 
-//CONFIG
+// CONFIG
     /**
      * Displays the configuration
      * @return Response
@@ -110,7 +132,7 @@ class ShareButtonsController extends AbstractController
         )->setMaxAge(3600);
     }
 
-//HELP
+// HELP
     /**
      * Displays the help
      * @return Response

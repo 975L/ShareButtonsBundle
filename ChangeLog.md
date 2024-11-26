@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.6.1
+
+- Added redirect from POST call to GET route to avoid errors messages (26/11/2024)
+
 ## v4.6
 
 - Added ->setMaxAge(3600) to controllers (15/09/2024)
