@@ -49,7 +49,7 @@ class ShareButtonsController extends AbstractController
     public function shareRedirect($share, $url)
     {
         //Redirects to share url
-        $this->redirectToroute('sharebuttons_share', [
+        return $this->redirectToroute('sharebuttons_share', [
             'share' => $share,
             'url' => $url
         ]);
