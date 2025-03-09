@@ -63,11 +63,6 @@ To use styles and javascript you have to include them from `public/css/` and `pu
 ```twig
 <link rel="stylesheet" href="bundles/c975lsite/css/animations.min.css">
 <script src="bundles/c975lsharebuttons/js/functions.min.js"></script>
-
-{# or  using c975L/IncludeLibrary #}
-{{ inc_lib(absolute_url(asset('bundles/c975lsharebuttons/css/styles.min.css')), 'local') }}
-{{ inc_lib(absolute_url(asset('bundles/c975lsharebuttons/js/functions.min.js')), 'local') }}
-
 ```
 
 ### Step 5: Define configuration

@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.7
+
+- Removed use of`c975L/ServicesBundle` (09/03/2025)
+
 ## v4.6.2
 
 - Corrected missing return (27/11/2024)
