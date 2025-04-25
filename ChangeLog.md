@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.8
+
+- Removed "c975l/email-bundle from composer.json (25/04/2025)
+
 ## v4.7
 
 - Removed use of`c975L/ServicesBundle` (09/03/2025)
