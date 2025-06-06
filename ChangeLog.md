@@ -1,6 +1,11 @@
 # Changelog
 
-## v4.8
+## v4.9
+
+- Dropped support for Twitter/X (06/06/2025)
+- Added support for Bluesky (06/06/2025)
+
+## v4.8
 
 - Removed "c975l/email-bundle from composer.json (25/04/2025)
 

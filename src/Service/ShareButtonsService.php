@@ -32,7 +32,7 @@ class ShareButtonsService implements ShareButtonsServiceInterface
      */
     public function getMainShares()
     {
-        return ['facebook', 'twitter', 'linkedin', 'pinterest', 'email'];
+        return ['facebook', 'bluesky', 'linkedin', 'pinterest', 'email'];
     }
 
     /**
@@ -45,8 +45,8 @@ class ShareButtonsService implements ShareButtonsServiceInterface
             'facebook' => [
                 'url' => 'https://www.facebook.com/sharer/sharer.php?u='
             ],
-            'twitter' => [
-                'url' => 'https://twitter.com/intent/tweet?url='
+            'bluesky' => [
+                'url' => 'https://bsky.app/intent/compose?text='
             ],
             'linkedin' =>
             [

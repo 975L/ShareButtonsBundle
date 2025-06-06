@@ -92,7 +92,7 @@ Use the Route `sharebuttons_dashboard` (url: "/sharebuttons/dashboard") to acces
 You can use any the following name, in the Twig Extension explained above, for its corresponding network:
 
 - facebook
-- twitter
+- bluesky
 - linkedin
 - pinterest
 - email
