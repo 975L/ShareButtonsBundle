@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.10
+
+- Replaced Symfony\Component\Routing\Annotation\Route by Symfony\Component\Routing\Attribute\Route (09/10/2025)
+
 ## v4.9
 
 - Dropped support for Twitter/X (06/06/2025)
