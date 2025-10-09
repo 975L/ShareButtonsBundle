@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.11
+
+- Deleted entity as not used anymore (09/10/2025)
+
 ## v4.10
 
 - Replaced Symfony\Component\Routing\Annotation\Route by Symfony\Component\Routing\Attribute\Route (09/10/2025)
