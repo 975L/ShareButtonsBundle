@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.12
+
+- Removed use of c975L/ToolbarBundle (03/11/2025)
+- Removed config, dashboard and help Routes (03/11/2025)
+
 ## v4.11
 
 - Deleted entity as not used anymore (09/10/2025)
