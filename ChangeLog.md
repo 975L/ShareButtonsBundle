@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.12.1
+
+- Removed Voter as not used anymore (14/01/2026)
+
 ## v4.12
 
 - Removed use of c975L/ToolbarBundle (03/11/2025)
