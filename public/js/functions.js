@@ -5,20 +5,25 @@
  * This source file is subject to the MIT license that is bundled
  * with this source code in the file LICENSE.
  */
+import { Controller } from "@hotwired/stimulus";
 
-// Opens the share popup
-function sharePopup(url) {
-    let width = (screen.width * 50) / 100;
-    let height = (screen.height * 40) / 100;
-    let left = (screen.width - width) / 2;
-    let top = (screen.height - height) / 2;
-    window.open(url, "Share", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + width + ", height=" + height + ", top=" + top + ", left=" + left);
+export default class extends Controller {
+    connect() {
+        // Puts event listeners on .btn-share
+        document.querySelectorAll('.btn-share').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                this.sharePopup(item.getAttribute('href'));
+            });
+        });
+    }
+
+    // Opens the share popup
+    sharePopup(url) {
+        let width = (screen.width * 50) / 100;
+        let height = (screen.height * 40) / 100;
+        let left = (screen.width - width) / 2;
+        let top = (screen.height - height) / 2;
+        window.open(url, "Share", "toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=" + width + ", height=" + height + ", top=" + top + ", left=" + left);
+    }
 }
-
-// Puts event listeners on .btn-share
-document.querySelectorAll('.btn-share').forEach(item => {
-    item.addEventListener('click', event => {
-        event.preventDefault();
-        sharePopup(item.getAttribute('href'));
-    });
-});
