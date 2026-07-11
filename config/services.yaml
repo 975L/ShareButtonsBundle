@@ -4,11 +4,10 @@ services:
         autoconfigure: true
         public: true
 
-    c975L\ShareButtonsBundle\Controller\:
-        resource: '../src/Controller/*'
+    c975L\ShareButtonsBundle\:
+        resource: '../src/'
+        exclude: '../src/{DependencyInjection}'
 
-    c975L\ShareButtonsBundle\Service\:
-        resource: '../src/Service/*'
-
-    c975L\ShareButtonsBundle\Twig\:
-        resource: '../src/Twig/*'
+    c975L\ShareButtonsBundle\Service\StylesheetProvider:
+        tags:
+            - { name: 'ui.stylesheet', priority: 10 }

@@ -1,0 +1,13 @@
+[
+    {
+        "version": "4.13",
+        "date": "2026-05-16",
+        "description": [
+            {
+                "en": "Migrated javascript to stimulus controller",
+                "fr": "Migration du javascript vers un contrôleur Stimulus",
+                "es": "Migración del javascript a un controlador Stimulus"
+            }
+        ]
+    }
+]

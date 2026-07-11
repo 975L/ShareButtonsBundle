@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.13.1
+
+- Added bundle replaced by [c975L/SocialBundle](https://github.com/975L/SocialBundle) in README.md (16/05/2026)
+
 ## v4.13
 
 - Migrated javascript to stimulus controller (16/05/2026)

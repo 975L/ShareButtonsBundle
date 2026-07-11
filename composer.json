@@ -1,9 +1,8 @@
 {
     "name": "c975l/sharebuttons-bundle",
     "type": "symfony-bundle",
-    "description": "Provides share buttons in differents views, with possibility to provide url",
+    "description": "Symfony bundle that provides a Twig function to embed share buttons for popular social networks, with SVG icons included and multiple display styles.",
     "keywords": ["symfony", "bundle", "share", "buttons"],
-    "homepage": "https://github.com/975L/ShareButtonsBundle",
     "license": "MIT",
     "authors": [
         {

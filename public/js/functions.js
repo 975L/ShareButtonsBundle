@@ -10,10 +10,10 @@ import { Controller } from "@hotwired/stimulus";
 export default class extends Controller {
     connect() {
         // Puts event listeners on .btn-share
-        document.querySelectorAll('.btn-share').forEach(item => {
-            item.addEventListener('click', event => {
+        document.querySelectorAll(".btn-share").forEach(item => {
+            item.addEventListener("click", event => {
                 event.preventDefault();
-                this.sharePopup(item.getAttribute('href'));
+                this.sharePopup(item.getAttribute("href"));
             });
         });
     }
